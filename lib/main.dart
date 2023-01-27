@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'utils/app_routes.dart';
 import 'screens/categories_meals_screen.dart';
-import 'screens/categories_screen.dart';
+import 'screens/tabs_screen.dart';
+import 'screens/meal_details_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -28,9 +29,34 @@ class MyApp extends StatelessWidget {
             ),
       ),
       routes: {
-        AppRoutes.home: (_) => const CategoriesScreen(),
+        AppRoutes.home: (_) => const TabsScreen(),
         AppRoutes.categoriesScreen: (_) => const CategoriesMealsScreen(),
+        AppRoutes.mealDetail: (_) => const MealDetailsScreen(),
       },
+      // onGenerateRoute: (settings) {
+      //   if (settings.name == '/rota1') {
+      //     return null;
+      //   } else if (settings.name == '/rota2') {
+      //     return null;
+      //   } else {
+      //     return MaterialPageRoute(
+      //       builder: (context) {
+      //         return const CategoriesScreen();
+      //       },
+      //     );
+      //   }
+      // },
+      // onUnknownRoute: (settings) {
+      //   return MaterialPageRoute(
+      //     builder: (context) {
+      //       return const Scaffold(
+      //         body: Center(
+      //           child: Text('ERROR 404'),
+      //         ),
+      //       );
+      //     },
+      //   );
+      // },
     );
   }
 }
