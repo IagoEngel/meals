@@ -29,12 +29,12 @@ class _MyAppState extends State<MyApp> {
       this.settings = settings;
 
       _availableMeals = dummyMeals.where((meal) {
-        var filterGluten = settings.isGlutenFree && meal.isGlutenFree;
-        var filterLactose = settings.isLactoseFree && meal.isLactoseFree;
-        var filterVegan = settings.isVegan && meal.isVegan;
-        var filterVegetarian = settings.isVegetarian && meal.isVegetarian;
+        var filterGluten = settings.isGlutenFree && !meal.isGlutenFree;
+        var filterLactose = settings.isLactoseFree && !meal.isLactoseFree;
+        var filterVegan = settings.isVegan && !meal.isVegan;
+        var filterVegetarian = settings.isVegetarian && !meal.isVegetarian;
 
-        return filterGluten && filterLactose && filterVegan && filterVegetarian;
+        return !filterGluten && !filterLactose && !filterVegan && !filterVegetarian;
       }).toList();
     });
   }
