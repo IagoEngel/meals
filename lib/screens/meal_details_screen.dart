@@ -15,7 +15,7 @@ class MealDetailsScreen extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: Text(
         title,
-        style: Theme.of(context).textTheme.headline6,
+        style: Theme.of(context).textTheme.titleLarge,
       ),
     );
   }
